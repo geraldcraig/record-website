@@ -5,9 +5,9 @@ plugins {
     id 'groovy'
 }
 
-group = 'uk.ac.qub'
+group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-description = 'copilot-recordwebsite'
+description = 'recordwebsite'
 
 java {
     toolchain {
@@ -28,7 +28,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.h2database:h2:2.2.224'
+    implementation 'com.h2database:h2'
+    implementation 'org.springframework.boot:spring-boot-h2console'
     implementation 'com.opencsv:opencsv:5.9'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

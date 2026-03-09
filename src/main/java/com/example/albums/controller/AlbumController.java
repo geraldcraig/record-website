@@ -1,6 +1,6 @@
 package com.example.albums.controller;
 
-import com.example.albums.entity.Album;
+import com.example.albums.model.Album;
 import com.example.albums.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,17 +18,27 @@ public class AlbumController {
 
     private final AlbumRepository albumRepository;
 
+//    @GetMapping
+//    public ResponseEntity<List<Album>> getAllAlbums() {
+//        List<Album> albums = albumRepository.findAll();
+//        return ResponseEntity.ok(albums);
+//    }
+//
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Album> getAlbumById(@PathVariable Long id) {
+//        return albumRepository.findById(id)
+//                .map(ResponseEntity::ok)
+//                .orElse(ResponseEntity.notFound().build());
+//    }
+
     @GetMapping
-    public ResponseEntity<List<Album>> getAllAlbums() {
-        List<Album> albums = albumRepository.findAll();
-        return ResponseEntity.ok(albums);
+    public List<Album> getAllAlbums() {
+        return albumRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Album> getAlbumById(@PathVariable Long id) {
-        return albumRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public List<Album> getAlbumById(@PathVariable Long id) {
+        return albumRepository.findById(id).stream().toList();
     }
 }
 

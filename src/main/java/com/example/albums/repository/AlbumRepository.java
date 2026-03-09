@@ -1,6 +1,6 @@
 package com.example.albums.repository;
 
-import com.example.albums.entity.Album;
+import com.example.albums.model.Album;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

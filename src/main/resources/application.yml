@@ -3,27 +3,29 @@ spring:
     name: albums-backend
   datasource:
     url: jdbc:h2:mem:albumsdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
     username: sa
     password:
+    driver-class-name: org.h2.Driver
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
     hibernate:
-      ddl-auto: create
-    show-sql: false
-    properties:
-      hibernate:
-        format_sql: true
-        use_sql_comments: true
+      ddl-auto: update
+      hbm2ddl:
+        auto: create
+
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
   h2:
     console:
       enabled: true
       path: /h2-console
 
-server:
-  port: 8080
-  servlet:
-    context-path: /
+#server:
+#  port: 8080
+#  servlet:
+#    context-path: /
 
 app:
   cors:
@@ -33,4 +35,29 @@ logging:
   level:
     root: INFO
     com.example.albums: DEBUG
+
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:albumsdb
+#    username: sa
+#    password:
+#    driverClassName: org.h2.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#
+#  h2:
+#    console:
+#      enabled: true
+
+#spring:
+#  h2:
+#    console.enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:dcbapp
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password: password
+#    jpa:
+#      spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+
 

@@ -1,6 +1,6 @@
 package com.example.albums.controller;
 
-import com.example.albums.entity.Users;
+import com.example.albums.model.Users;
 import com.example.albums.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,17 +18,27 @@ public class UsersController {
 
     private final UsersRepository usersRepository;
 
+//    @GetMapping
+//    public ResponseEntity<List<Users>> getAllUsers() {
+//        List<Users> users = usersRepository.findAll();
+//        return ResponseEntity.ok(users);
+//    }
+//
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Users> getUserById(@PathVariable Long id) {
+//        return usersRepository.findById(id)
+//                .map(ResponseEntity::ok)
+//                .orElse(ResponseEntity.notFound().build());
+//    }
+
     @GetMapping
-    public ResponseEntity<List<Users>> getAllUsers() {
-        List<Users> users = usersRepository.findAll();
-        return ResponseEntity.ok(users);
+    public List<Users> getAllUsers() {
+        return usersRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Users> getUserById(@PathVariable Long id) {
-        return usersRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public List<Users> getUserById(@PathVariable Long id) {
+        return usersRepository.findById(id).stream().toList();
     }
 }
 
