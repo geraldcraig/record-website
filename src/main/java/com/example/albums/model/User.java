@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 //@Data
 //@NoArgsConstructor
 //@AllArgsConstructor
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,10 +17,10 @@ public class Users {
     private String userPassword;
     private Boolean admin;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(Long id, String firstName, String lastName, String userName, String userPassword, Boolean admin) {
+    public User(Long id, String firstName, String lastName, String userName, String userPassword, Boolean admin) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -3,7 +3,7 @@ package com.example.albums.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "albums")
+@Table(name = "ALBUMS")
 //@Data
 //@NoArgsConstructor
 //@AllArgsConstructor

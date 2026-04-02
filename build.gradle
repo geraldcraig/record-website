@@ -40,3 +40,10 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+//task generateDataSql(type: JavaExec) {
+//    group = 'application'
+//    description = 'Generate data.sql from album_list_new.csv using OpenCSV'
+//    classpath = sourceSets.main.runtimeClasspath
+//    mainClass = 'com.example.albums.util.CsvToSqlGenerator'
+//}

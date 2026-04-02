@@ -1,22 +1,20 @@
 package com.example.albums.controller;
 
 import com.example.albums.model.Album;
-import com.example.albums.repository.AlbumRepository;
+import com.example.albums.service.AlbumService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/albums")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AlbumController {
 
-    private final AlbumRepository albumRepository;
+    private final AlbumService albumService;
 
 //    @GetMapping
 //    public ResponseEntity<List<Album>> getAllAlbums() {
@@ -33,12 +31,18 @@ public class AlbumController {
 
     @GetMapping
     public List<Album> getAllAlbums() {
-        return albumRepository.findAll();
+        return albumService.getAllAlbums();
+    }
+
+    @PostMapping
+    public Album createAlbum(@RequestBody Album album) {
+        return albumService.createAlbum(album);
     }
 
     @GetMapping("/{id}")
-    public List<Album> getAlbumById(@PathVariable Long id) {
-        return albumRepository.findById(id).stream().toList();
+    public Album getAlbumById(@PathVariable Long id) {
+        return albumService.getAlbumById(id);
     }
+
 }
 
