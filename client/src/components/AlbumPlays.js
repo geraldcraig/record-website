@@ -4,7 +4,7 @@ import {NavLink} from "react-router";
 function AlbumPlays() {
     const [albums, setAlbums] = useState([]);
 
-    const baseURL = "http://localhost:8081";
+    const baseURL = "http://localhost:8080";
 
     useEffect(() => {
         fetch(`${baseURL}/api/albums`)

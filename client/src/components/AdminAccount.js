@@ -4,7 +4,7 @@ import {NavLink} from "react-router";
 function AdminAccount() {
     const [users, setUsers] = useState([]);
 
-    const baseURL = "http://localhost:8081";
+    const baseURL = "http://localhost:8080";
 
     useEffect(() => {
         fetch(`${baseURL}/api/users`)

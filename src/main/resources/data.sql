@@ -5,7 +5,7 @@
 INSERT INTO users(FIRST_NAME, LAST_NAME, USER_NAME, USER_PASSWORD, ADMIN) VALUES
 ('John', 'Doe', 'johndoe', 'password123', 0),
 ('Jane', 'Smith', 'janesmith', 'password456', 0),
-('Admin', 'User', 'adminuser', 'adminpassword', 1);
+('Admin', 'User', 'admin', 'admin', 1);
 
 -- Albums data
 INSERT INTO albums (ALBUM_YEAR, TITLE, ARTIST, GENRE, SUBGENRE, IMAGE) VALUES

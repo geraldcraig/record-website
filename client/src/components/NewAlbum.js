@@ -21,7 +21,7 @@ function NewAlbum() {
 
     const navigate = useNavigate();
 
-    const baseURL = "http://localhost:8081";
+    const baseURL = "http://localhost:8080";
 
     const handleSubmit = (event) => {
         event.preventDefault();
