@@ -33,9 +33,6 @@ function App() {
             <Header/>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
-                <Route path="/allalbums" element={<AllAlbums/>}/>
-                <Route path="/allalbumsclass" element={<AllAlbumsClass/>}/>
-                <Route path="/allalbumsfunctional" element={<AllAlbumsFunctional/>}/>
                 <Route path="/login" element={<LogIn/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/search" element={<Search/>}/>
