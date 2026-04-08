@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Link, Route, Routes} from "react-router";
+import {BrowserRouter, createBrowserRouter, Link, Route, RouterProvider, Routes} from "react-router";
 import AlbumList from "./components/AlbumList";
 import TopTen from "./components/TopTen";
 import LogIn from "./components/LogIn";
@@ -26,32 +26,37 @@ import EditAccounts from "./components/EditAccounts";
 import AllUsers from "./components/AllUsers";
 import AdminEditAccounts from "./components/AdminEditAccounts";
 import AlbumInfo from "./components/AlbumInfo";
+import Home from "./pages/Home";
+
+const router = createBrowserRouter([
+    {path: '/', element: <Home/>},
+]);
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Header/>
-            <Routes>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="/login" element={<LogIn/>}/>
-                <Route path="/register" element={<Register/>}/>
-                <Route path="/search" element={<Search/>}/>
-                <Route path="/account" element={<Account/>}/>
-                <Route path="/albumplays" element={<AlbumPlays/>}/>
-                <Route path="/ownedalbums" element={<OwnedAlbums/>}/>
-                <Route path="/adminlogin" element={<AdminLogin/>}/>
-                <Route path="/album" element={<Album/>}/>
-                <Route path="/newalbum" element={<NewAlbum/>}/>
-                <Route path="/adminaccount" element={<AdminAccount/>}/>
-                <Route path="/editaccounts" element={<EditAccounts/>}/>
-                <Route path="/topten" element={<TopTen/>}/>
-                <Route path="/allusers" element={<AllUsers/>}/>
-                <Route path="/admineditaccounts" element={<AdminEditAccounts/>}/>
-                <Route path="/albumlist" element={<AlbumList/>}/>
-                <Route path="/albumlist/:albumId" element={<AlbumInfo/>}/>
-            </Routes>
-        </BrowserRouter>
-    );
+    return <RouterProvider router={router} />;
+        // <BrowserRouter>
+        //     <Header/>
+        //     <Routes>
+        //         <Route path="/" element={<HomePage/>}/>
+                {/*<Route path="/login" element={<LogIn/>}/>*/}
+                {/*<Route path="/register" element={<Register/>}/>*/}
+                {/*<Route path="/search" element={<Search/>}/>*/}
+                {/*<Route path="/account" element={<Account/>}/>*/}
+                {/*<Route path="/albumplays" element={<AlbumPlays/>}/>*/}
+                {/*<Route path="/ownedalbums" element={<OwnedAlbums/>}/>*/}
+                {/*<Route path="/adminlogin" element={<AdminLogin/>}/>*/}
+                {/*<Route path="/album" element={<Album/>}/>*/}
+                {/*<Route path="/newalbum" element={<NewAlbum/>}/>*/}
+                {/*<Route path="/adminaccount" element={<AdminAccount/>}/>*/}
+                {/*<Route path="/editaccounts" element={<EditAccounts/>}/>*/}
+                {/*<Route path="/topten" element={<TopTen/>}/>*/}
+                {/*<Route path="/allusers" element={<AllUsers/>}/>*/}
+                {/*<Route path="/admineditaccounts" element={<AdminEditAccounts/>}/>*/}
+                {/*<Route path="/albumlist" element={<AlbumList/>}/>*/}
+                {/*<Route path="/albumlist/:albumId" element={<AlbumInfo/>}/>*/}
+        //     </Routes>
+        // </BrowserRouter>
+    // );
 }
 
 export default App;
