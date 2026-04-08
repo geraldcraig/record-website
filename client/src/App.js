@@ -7,29 +7,12 @@ import {
     RouterProvider,
     Routes
 } from "react-router";
-import AlbumList from "./components/AlbumList";
-import TopTen from "./components/TopTen";
-import LogIn from "./components/LogIn";
-import Register from "./components/Register";
-import Search from "./components/Search";
-import Account from "./components/Account";
-import AlbumPlays from "./components/AlbumPlays";
-import OwnedAlbums from "./components/OwnedAlbums";
-import AdminLogin from "./components/AdminLogin";
-import Album from "./components/Album";
-import NewAlbum from "./components/NewAlbum";
-import AdminAccount from "./components/AdminAccount";
-// import HomePage from "./components/HomePage";
-import Header from "./components/Header";
-import EditAccounts from "./components/EditAccounts";
-import AllUsers from "./components/AllUsers";
-import AdminEditAccounts from "./components/AdminEditAccounts";
-import AlbumInfo from "./components/AlbumInfo";
-import ProductsPage from "./pages/Products";
+
 import HomePage from "./pages/Home";
 import ErrorPage from "./pages/Error";
 import RootLayout from "./pages/Root";
-import ProductDetailPage from "./pages/ProductDetail";
+import AlbumDetailPage from "./pages/AlbumDetail";
+import AlbumsPage from "./pages/Albums";
 
 // const routeDefinitions = createRoutesFromElements(
 //     <Route>
@@ -47,8 +30,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             {path: '/', element: <HomePage/>},
-            {path: '/products', element: <ProductsPage/>},
-            { path: '/products/:productId', element: <ProductDetailPage /> }
+            {path: '/albums', element: <AlbumsPage/>},
+            { path: '/albums/:albumId', element: <AlbumDetailPage /> }
         ],
     },
 ]);

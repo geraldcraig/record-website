@@ -22,12 +22,12 @@ function MainNavigation() {
                     </li>
                     <li>
                         <NavLink
-                            to="/products"
+                            to="/albums"
                             className={({ isActive }) =>
                                 isActive ? classes.active : undefined
                             }
                         >
-                            Products
+                            Albums
                         </NavLink>
                     </li>
                 </ul>
